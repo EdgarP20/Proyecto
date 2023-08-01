@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hijos de la moto - Accesorios</title>
+  <link rel="shortcut icon" href="logo.png">
+  
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700;800&family=Raleway&display=swap');
+	  
+	  * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	text-align: center;
+	color: #DFDEE0;
+	  }
+	  a{
+		  text-decoration: none;
+	  }
+	  ul{
+		  list-style: none;
+	  }	  
+	  body{
+		  font-family: 'Poppins', sans-serif;
+		  background-color: #18171D;
+	  }
+	  img{
+	max-width: 100%;
+	align-content: center;
+	align-items: center;
+	  }
+	  
+	  .container{
+		   max-width: 1200px;
+		  margin: 0 auto;
+		  
+	  }
+	  header {
+    display: flex;
+    align-items: center;
+    min-height: 15vh;
+    background: linear-gradient(
+      90deg,
+      rgba(47, 28, 42, 1) 0%,
+      rgba(45, 54, 61, 1) 50%,
+      rgba(19, 41, 65, 1) 100%
+      );
+	  }
+.menu{
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  display: flex;
+			  align-items: center;
+			  justify-content: space-between;
+	  }
+ .logo{
+			  font-size: 25px;
+			  color: #BA8250;
+			  text-transform: uppercase;
+			  font-weight: 800;
+ }
+		  .menu .navbar ul li{
+			  position: relative;
+			  float: left;
+		  } 
+		  .menu .navbar ul li a{
+			  font-size: 17px;
+			  padding: 20px;
+			  color: #DFDDE0;
+			  text-transform: uppercase;
+			  display: block;
+			  
+		  }
+	  .menu .navbar ul li a:hover{
+		  color: #BA8250;
+		  
+	  }
+	  #menu{
+		  display: none;
+	  }
+	  .menu-icono{
+		  width: 25px;
+	  }
+	  .menu label{
+		  cursor: pointer;
+		  display: none;
+	  }
+	  .submenu{
+		  position: relative;
+		  
+	  }
+	  .submenu #carrito{
+		  display: none;
+		  
+	  }
+	  .submenu:hover #carrito{
+		  display: block;
+		  position: absolute;
+		  right: 0;
+		  backdrop-filter: blur(10px);
+		  top: 100%;
+		  z-index: 1;
+		  background-color: #4e4b5076;
+		  padding: 20px;
+		  min-width: 400px;
+	  }
+		 <!-- es para dar una transparencia y el z para que aparexca enfrente de los elementos --> 
+	  table{
+		  width: 100%;
+	  }
+	  th, td{
+		  
+		  color:#DFDDE0;
+	  }
+	  	  h2{
+		  color:#DFDDE0;
+		  font-family: 'Bebas Neue', sans-serif;
+		  font-size: 80px;
+		  
+	  }
+	  h3{
+		  color:#DFDDE0;
+		  font-family: 'Bebas Neue', sans-serif;
+		  font-size: 25px;
+		  margin-bottom: 10px;
+	  }
+	  .borrar{
+		  background-color: #BA8250;
+		  border-radius: 50%;
+		  padding: 5px 10px;
+		  color:#DFDDE0;
+		  font-weight: 800;
+		  cursor: pointer;
+	  }
+	  .header-txt{
+		  text-align: center;
+	  }
+	  .header-txt h1{
+		  font-family: 'Bebas Neue', sans-serif;
+		  font-size: 100px;
+		  color: #838586;
+	  }.header-txt p{
+		  font-size: 16px;
+		  color: #DFDDE0;
+		  text-transform: capitalize;
+		  margin-bottom: 35px;
+	  }
+	  .header-txt img{
+	   width: 700px;
+	   display: block;
+	   margin: 0 auto;
+		  
+	  }
+
+	  .btn-1, .btn-2{
+		  display: inline-block;
+		  padding: 13px 25px;
+		  background-color: #BA8250;
+		  color:#DFDDE0;
+		  font-family: 'Bebas Neue', sans-serif;
+		  margin-top: 55px;
+		  border-radius: 20px;
+	  }
+
+    .navbar {
+      margin-top: 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .navbar li a {
+      color: #DFDDE0;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .navbar li a:hover {
+      color: #BA8250;
+    }
+
+    /* Estilos para la sección de accesorios */
+    .accesorios {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .accesorios h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    .product-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .product {
+      background-color: #2E2A34;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .product img {
+      width: 200px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .product h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .precio {
+      font-size: 20px;
+      font-weight: 800;
+      color: #BA8250;
+      margin-bottom: 20px;
+    }
+
+    .btn-2 {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #BA8250;
+      color: #DFDDE0;
+      font-family: 'Bebas Neue', sans-serif;
+      border-radius: 20px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-2:hover {
+      background-color: #8c5a29;
+    }
+	  	  .logo img{
+		  cursor: default;
+	  }
+	  .submenu img{
+		  cursor: pointer;
+	  }
+  </style>
+</head>
+<body>
+  <header>
+		<div class="menu container">
+			<a href="#" class="logo "> <img src="logo.png"  alt="" width="88" height="76"></a>
+			<input type="checkbox" id="menu" \>
+			<label for="menu">
+				<img src="images/menu.png" class="menu-icono" alt="">
+			</label>			
+			<nav class="navbar">
+				<ul>
+					<li><a href="pag_principal.html">Inicio</a></li>
+					<li><a href="Accesorios.html">Accesorios</a></li>
+					<li><a href="Ropa.html">Ropa</a></li>
+					<li><a href="ofertas_especiales.html">Calzado</a></li>
+				</ul>
+				
+			</nav>
+			<div>
+				<ul>
+					<li class="submenu">
+						<img src="images/car.svg" id="img-carrito" alt="">
+						<div id="carrito">
+							<table id="lista-carrito">
+								<thead>
+									<tr>
+									  <th> Imagen &nbsp;&nbsp;</th>
+										<th> &nbsp;Nombre&nbsp; &nbsp;&nbsp;</th>
+										<th> Precio</th>
+										<th> </th>
+										
+									</tr>
+								</thead>
+								<tbody></tbody>
+								
+							</table>
+							<a href="#" class="btn-2" id="vaciar-carrito">Vaciar carrito</a>
+							<a href="#" class="btn-2" id="comprar">Comprar</a>
+							
+						</div>
+					</li>
+					
+				</ul> 	
+				
+			</div>
+		</div>
+
+  </header>
+	<main class="products container" id="lista-1">
+		<h2>Productos</h2>
+		<div class="product-content">
+			
+			<div class="product">
+				<img src="images/casco.png" alt="">
+				<div class="product-txt">
+					<h3>Casco para Motociclista</h3>
+					<p>Brumm Extragrande Negro</p>
+					<p class="precio">$ 1,899 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/casco2.png" alt="">
+				<div class="product-txt">
+					<h3>Casco para Motociclista</h3>
+					<p>SHARK EVO-GT SEAN ANTHRACITE / BLACK / RED</p>
+					<p class="precio">$ 1599 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="2">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/guantes.jpg" alt="">
+				<div class="product-txt">
+					<h3>Guantes</h3>
+					<p>DAINESE X-MOTO</p>
+					<p class="precio">$ 1237 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="3">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/guantes2.jpeg" alt="">
+				<div class="product-txt">
+					<h3>Guantes</h3>
+					<p>Faseed Aqua-Man Impermeables Textil</p>
+					<p class="precio">$ 699 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="4">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/rodillera.png" alt="">
+				<div class="product-txt">
+					<h3>Rodilleras</h3>
+					<p>Articuladas Para Motociclista Ko</p>
+					<p class="precio">$ 600 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="5">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/rodillera2.png" alt="">
+				<div class="product-txt">
+					<h3>Rodilleras</h3>
+					<p>TP199 | SKU: TP199K-BK</p>
+					<p class="precio">$ 2000 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="6">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/lentes.png" alt="">
+				<div class="product-txt">
+					<h3>Lentes de sol</h3>
+					<p> HAWK - POLARIZED BLACK GREY</p>
+					<p class="precio">$ 649 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="7">Agregar</a>
+				</div>
+				
+			</div>
+            <div class="product">
+				<img src="images/lentes2.png" alt="">
+				<div class="product-txt">
+					<h3>Lentes de sol</h3>
+					<p> AHURA - POLARIZED BLACK GREY</p>
+					<p class="precio">$ 649 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="8">Agregar</a>
+				</div>
+				
+			</div>
+			<div class="product">
+				<img src="images/acm.png" alt="">
+				<div class="product-txt">
+					<h3>Accesorio</h3>
+					<p>Doraemon Pato Con Luz Y Gafas Para Bicicleta Y Motos</p>
+					<p class="precio">$ 119 MXN</p>
+					<a href="#" class="agregar-carrito btn-2" data-id="9">Agregar</a>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</main>
+
+
+ <script>
+	const carrito = document.getElementById('carrito');
+	const elementos1 = document.getElementById('lista-1');
+	const lista = document.querySelector('#lista-carrito tbody');
+	const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+	 
+	 function confirmarCompra() {
+    if (lista.children.length === 0) {
+      alert('No has seleccionado ningún producto.');
+    } else {
+      if (confirm('¿Estás seguro de realizar la compra?')) {
+        alert('¡Se ha registrado con éxito, Gracias por tu compra!');
+      } else {
+        alert('Lo siento, la compra ha sido cancelada.');
+      }
+    }
+  }
+	  
+	cargarEventListeners();
+	
+	  function cargarEventListeners(){
+		  elementos1.addEventListener('click',comprarElemento);
+		  carrito.addEventListener('click',eliminarElemento);
+		  vaciarCarritoBtn.addEventListener('click',vaciarCarrito);
+		  
+		  const btnComprar = document.getElementById('comprar');
+    btnComprar.addEventListener('click', confirmarCompra);
+		  
+	  }
+	  
+	  
+	  function comprarElemento(e){
+		  e.preventDefault();
+		  if(e.target.classList.contains('agregar-carrito')){
+			  const elemento = e.target.parentElement.parentElement;
+			  leerDatosElemento(elemento);
+		  }
+	  }
+	  
+	  function leerDatosElemento(elemento){
+		  const infoElemento ={
+			  imagen: elemento.querySelector('img').src,
+			  titulo: elemento.querySelector('h3').textContent,
+			  precio: elemento.querySelector('.precio').textContent,
+			  id: elemento.querySelector('a').getAttribute('data-id')
+		  }
+		  insertarCarrito(infoElemento);
+	  }
+	  function insertarCarrito(elemento){
+		  const row = document.createElement('tr');
+		  row.innerHTML =` 
+<td>
+    <img src="${elemento.imagen}" width=100>
+</td>
+
+<td>
+${elemento.titulo}
+</td>
+
+<td>
+${elemento.precio}
+</td>
+
+<td>
+<a herf="#" class="borrar data-id=${elemento.id}"> X </a>
+</td>
+`;
+		  lista.appendChild(row);
+	  }
+	  function eliminarElemento(e){
+		  e.preventDefault();
+		  let elemento,
+			  elementoId;
+		  if(e.target.classList.contains('borrar')){
+			  e.target.parentElement.parentElement.remove();
+			  elemento = e.target.parentElement.parentElement;
+			  elementoId =elemento.querySelector('a').getAttribute('data-id');
+		  }
+		  
+	  }
+	  function vaciarCarrito(){
+		  while(lista.firstChild){
+			  lista.removeChild(lista.firstElementChild);
+		  }
+		  return false;
+	  }
+	  
+	 
+	  
+	  
+
+	
+    
+  </script>
+
+</body>
+</html>

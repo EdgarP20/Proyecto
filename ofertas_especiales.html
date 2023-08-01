@@ -1,0 +1,761 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calzado</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500;600;700;800&family=Raleway&display=swap');
+		* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none; /* Quita las lineas de los links*/
+	list-style: none;   /* Quita las viñetas de las listas */
+	text-align: center; /* Quita las viñetas de las listas */
+	color: #DFDEE0;
+	  }
+		body{
+			font-family: 'Poppins', sans-serif;
+		  background-color: #18171D;
+		}
+		.container{
+		   max-width: 1200px;
+		  margin: 0 auto;
+		  
+	  }
+		header {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(
+      90deg,
+      rgba(47, 28, 42, 1) 0%,
+      rgba(45, 54, 61, 1) 50%,
+      rgba(19, 41, 65, 1) 100%
+      );
+	  }
+		.swiper-slide{
+			padding: 0 80px 50px 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.swiper-button-prev:after {
+			font-size: 25px;
+		}
+		.swiper-button-next:after {
+			font-size: 25px;
+		}
+		.swiper-button-prev{
+			color: #efffff;
+		}
+		.swiper-button-next{
+			color: #EEFFFF;
+		}
+		.swiper-pagination-bullet{
+			background-color: #747474;
+			opacity: 1;
+		}
+		.swiper-pagination-bullet-active{
+			background-color: #7270ec;
+		}
+		.menu{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			z-index: 1000; /* se pone el menu ante cualquier cosa*/
+		}
+		.logo{
+			  font-size: 25px;
+			  color: #BA8250;
+			  text-transform: uppercase;
+			  font-weight: 800;
+ }
+		.menu .navbar ul li{
+			  position: relative;
+			  float: left;
+		  } 
+		.menu .navbar ul li a{
+			  font-size: 17px;
+			  padding: 20px;
+			  color: #DFDDE0;
+			  text-transform: uppercase;
+			  display: block;
+			  
+		  }
+		.menu .navbar ul li a:hover{
+		  color: #BA8250;
+		  
+	  }
+		#menu{
+		  display: none;
+	  }
+		.menu-icono{
+		  width: 25px;
+	  }
+		.menu label{
+		  cursor: pointer;
+		  display: none;
+	  }
+		.submenu{
+		  position: relative;
+		  
+	  }
+		.submenu #carrito{
+		  display: none;
+		  
+	  }
+		.submenu:hover #carrito{
+		  display: block;
+		  position: absolute;
+		  right: 0;
+		  backdrop-filter: blur(10px); /* tranparencia*/
+		  top: 100%;
+		  z-index: 1000;
+		  background-color: #4e4b5076;
+		  padding: 20px;
+		  min-width: 400px;
+		  
+	  }
+		table{
+		  width: 100%;
+	  }
+	  th, td{
+		  
+		  color:#DFDDE0;
+	  }
+		.borrar{
+		  background-color: #BA8250;
+		  border-radius: 50%;
+		  padding: 5px 10px;
+		  color:#DFDDE0;
+		  font-weight: 800;
+		  cursor: pointer;
+	  }
+		.header-content{
+			padding: 200px 0 100px 0;
+		}
+		.header-info{
+			display: flex;
+			
+		}
+		.header-txt{
+			width: 50%
+		}
+		.header-txt h1{
+			font-size: 50px;
+			color:#DFDDE0;
+			text-transform: capitalize;
+		}
+		.header-img{
+			width: 50%;
+			text-align: right;
+		}
+		.header-img img{
+			width: 500px;
+		}
+		.prices{
+			display: flex;
+			margin: 20px 0;
+		}
+		.price-1 {
+			font-size: 30px;
+			color: #BA8250;
+			
+		}
+		
+		
+		
+		.btn-1{
+			display: inline-block;
+			background: #4e4b5076; 
+			color:#DFDDE0;
+			font-size: 16px;
+			font-family: 'Bebas Neue', sans-serif;
+			padding: 10px 25px;
+			border-radius: 25px;
+			margin-top: 40px;
+		}
+		.btn-1:hover{
+			background-color: #BA8250;
+		}
+		hr{
+			border: 1px solid #4e4b5076;  
+		}
+		h2{
+	  color: #DFDDE0;
+		  font-size: 80px;
+		  font-family: 'Bebas Neue', sans-serif;
+		  margin-bottom: 15px;
+		  border-radius: 20px;
+	  }
+	  	  h3{
+		  color:#DFDDE0;
+		  font-family: 'Bebas Neue', sans-serif;
+		  font-size: 25px;
+		  margin-bottom: 10px;
+	  }
+		.promos{
+			padding: 50px 0;
+			text-align: center;
+		}
+		.promos h2{
+			font-size: 50px;
+			color: #DFDDE0;
+			margin-bottom: 35px;
+		}
+		.categories{
+			text-align: left;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr); /* Solo se agregan 2 elementos*/
+		}
+		.categorie{
+			display: flex;
+			align-items: center;
+			padding: 35px;
+		}
+		.categorie img{
+			width: 150px;
+		}
+		.categorie-1{
+			width: 50%;
+		}
+		.categorie-1 h3{
+			color: #DFDDE0;
+			font-size: 22px;
+			font-weight: 600;
+		}
+		.categorie-img{
+			width: 50px;
+		}
+		
+		.products{
+			padding: 50px 0;
+		}
+		.products h2{
+			font-size: 50px;
+			color: #DFDDE0;
+			margin-bottom: 70px;
+		}
+		.product{
+			text-align: center;
+		}
+		.product img{
+			width: 150px;
+			margin-bottom: 15px;
+		}
+		.product-txt h3{
+			font-size: 18px;
+			color: #DFDDE0;
+			margin-bottom: 15px;
+		}
+		.product-txt{
+			color: #4e4b5076;
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+		.btn-3{
+			display: inline-block;
+			padding: 10px 25px;
+			font-size: 14px;
+			color: #DFDDE0;
+			border: 1px solid #BA8250;
+			border-radius: 25px;
+			margin-top: 15px;
+		}
+		.btn-3:hover{
+			background-color: #BA8250;
+		}
+		.precio {
+      font-size: 20px;
+      font-weight: 800;
+      color: #BA8250;
+      margin-bottom: 20px;
+    }
+		
+
+		
+		
+		
+	</style>
+</head>
+
+<body>
+		<header>
+		<div class="menu container">
+			<a href="#" class="logo "> <img src="logo.png"  alt="" width="88" height="76"></a>
+			<input type="checkbox" id="menu" \>
+			<label for="menu">
+				<img src="images/menu.png" class="menu-icono" alt="">
+			</label>			
+			<nav class="navbar">
+				<ul>
+					<li><a href="pag_principal.html">Inicio</a></li>
+					<li><a href="Accesorios.html">Accesorios</a></li>
+					<li><a href="Ropa.html">Ropa</a></li>
+					<li><a href="ofertas_especiales.html">Calzado</a></li>
+				</ul>
+				
+			</nav>
+			<div>
+				<ul>
+					<li class="submenu">
+						<img src="images/car.svg" id="img-carrito" alt="">
+						<div id="carrito">
+							<table id="lista-carrito">
+								<thead>
+									<tr>
+									  <th> Imagen &nbsp;&nbsp;</th>
+										<th> &nbsp;Nombre&nbsp; &nbsp;&nbsp;</th>
+										<th> Precio</th>
+										<th> </th>
+										
+									</tr>
+								</thead>
+								<tbody></tbody>
+								
+							</table>
+							<a href="#" class="btn-3" id="vaciar-carrito">Vaciar carrito</a>
+							<a href="#" class="btn-3" id="comprar">Comprar</a>
+							
+						</div>
+					</li>
+					
+				</ul> 	
+				
+			</div>
+		</div>
+		
+		<div class="header-content container" >
+			<div class="swiper mySwiper-1">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="header-info">
+							<div class="header-txt">
+								<h1>Boot Shorty Motocross MX BotasEnduro</h1>
+								<div class="prices">
+									
+									<p class="price-1">$ 1,836 MXN</p>
+								</div>
+								
+							</div>							
+						</div>
+						<div class="header-img">
+							<img src="images/z1.png" alt="">
+						</div>
+						
+					</div>
+					
+					<div class="swiper-slide">
+						<div class="header-info">
+							<div class="header-txt">
+								<h1>BÜSE OPEN ROAD BOOTS</h1>
+								<div class="prices">
+									
+									<p class="price-1">$ 5,782 MXN</p>
+								</div>
+								
+							</div>							
+						</div>
+						<div class="header-img">
+							<img src="images/z2.png" alt="">
+						</div>
+						
+					</div>
+					
+					<div class="swiper-slide">
+						<div class="header-info">
+							<div class="header-txt">
+								<h1>BOTA IMMORTALE RAMUS CABALLERO | NEGRO</h1>
+								<div class="prices">
+									
+									<p class="price-1">$ 1,595 MXN</p>
+								</div>
+								
+							</div>							
+						</div>
+						<div class="header-img">
+							<img src="images/z3.png" alt="">
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-pagination"></div>
+				
+
+			</div>
+			
+		</div>
+		
+	</header>
+	
+	<hr>
+	<section class="promos container" id="lista-1">
+		<h2>PROMOCIONES</h2>
+		<div class="categories">
+			<div class="categorie">
+				
+				<div class="categorie-1">
+					<h3>BOTA IMMORTALE WOOD LEGEND</h3>
+					<div class="prices">
+												
+						<p class="precio"> $ 1,995 MXN</p>
+					</div>
+					<a href="#" class="agregar-carrito btn-3" data-id="1">Agregar al carrito</a>
+				</div>
+				<div class="categorie-img">
+					<img src="images/z4.png" alt="">
+				</div>
+				
+			</div>
+			<div class="categorie">
+				
+				<div class="categorie-1">
+					<h3>Stella SMX-6 v2 Drystar - Botas impermeables para motocicleta</h3>
+					<div class="prices">
+						
+						<p class="precio"> $ 5544 MXN</p>
+					</div>
+					<a href="#" class="agregar-carrito btn-3" data-id="2">Agregar al carrito</a>
+				</div>
+				<div class="categorie-img">
+					<img src="images/z5.jpeg" alt="">
+				</div>
+				
+			</div>
+			<div class="categorie">
+				
+				<div class="categorie-1">
+					<h3>Alpinestars Botas para hombre 2047317-82-7 </h3>
+					<div class="prices">
+						
+						<p class="precio"> $ 5024 MXN</p>
+					</div>
+					<a href="#" class="agregar-carrito btn-3" data-id="3">Agregar al carrito</a>
+				</div>
+				<div class="categorie-img">
+					<img src="images/z6.png" alt="">
+				</div>
+				
+			</div>
+			<div class="categorie">
+				
+				<div class="categorie-1">
+					<h3>O'NEAL Men's Rsx Boat Motorcycle Boots</h3>
+					<div class="prices">
+						
+						<p class="precio"> $ 3740 MXN</p>
+					</div>
+					<a href="#" class="agregar-carrito btn-3" data-id="4">Agregar al carrito</a>
+				</div>
+				<div class="categorie-img">
+					<img src="images/z7.png" alt="">
+				</div>
+				
+			</div>
+			<div class="categorie">
+				
+				<div class="categorie-1">
+					<h3>DAINESE Zapatillas Moto Metropolis D-WP</h3>
+					<div class="prices">
+						
+						<p class="precio"> $ 3503 MXN</p>
+					</div>
+					<a href="#" class="agregar-carrito btn-3" data-id="5">Agregar al carrito</a>
+				</div>
+				<div class="categorie-img">
+					<img src="images/z8.jpg" alt="">
+				</div>
+				
+			</div>
+			<div class="categorie">
+				
+				<div class="categorie-1">
+					<h3>ZAPATILLAS VQUATTRO ARROW</h3>
+					<div class="prices">
+							
+						<p class="precio"> $ 1457 MXN</p>
+					</div>
+					<a href="#" class="agregar-carrito btn-3" data-id="5">Agregar al carrito</a>
+				</div>
+				<div class="categorie-img">
+					<img src="images/z9.png" alt="">
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	
+	<hr>
+	
+	<section class="products container" id="lista-2">
+		<h2>Nuevos productos</h2>
+		<div class="swiper mySwiper-2">
+			
+			<div class="swiper-wrapper">
+				
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z10.png" alt="">
+						<div class="product-txt">
+							<h3> Botas de moto para hombre</h3>
+							<p>Dainese Axial D1, color negro y blanco</p>
+							<p class="precio">$ 11084 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="6">Agregar al carrito</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z11.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para hombre</h3>
+							<p>BOTA IMMORTALE RENEGADE | CAFE</p>
+							<p class="precio">$ 1,895 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="7">Agregar al carrito</a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z12.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para hombre</h3>
+							<p>Botas Seguridad Cliff Suela Inyectada Al Corte, Dieléctricas</p>
+							<p class="precio">$ 899 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="8">Agregar al carrito</a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z13.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para mujer</h3>
+							<p>WOMEN'S SEKTOR SHOES</p>
+							<p class="precio">$ 2290 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="9">Agregar al carrito</a>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			
+		</div>
+		
+	</section>
+	
+	<hr>
+	
+	<section class="products container" id="lista-3">
+		<h2>Productos</h2>
+		<div class="swiper mySwiper-2">
+			
+			<div class="swiper-wrapper">
+				
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z14.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para hombre</h3>
+							<p>Nike SFB Gen 2 8'' Cuero</p>
+							<p class="precio">$ 1200 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="10">Agregar al carrito</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z15.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para hombre</h3>
+							<p>Bota Kroogen de Piel para Hombre</p>
+							<p class="precio">$ 799 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="11">Agregar al carrito</a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z16.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para hombre</h3>
+							<p>Cross Enduro moto boot Oneal RIDER BOOT CE Short Noir</p>
+							<p class="precio">$ 2308 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="12">Agregar al carrito</a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="swiper-slide">
+					<div class="product">
+						<img src="images/z17.png" alt="">
+						<div class="product-txt">
+							<h3>Botas de moto para hombre</h3>
+							<p>Bota Motocross Fox Racing – COMP</p>
+							<p class="precio">$ 200 MXN</p>
+							<a href="#" class="agregar-carrito btn-3" data-id="13">Agregar al carrito</a>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			
+		</div>
+		
+	</section>
+	
+	
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	
+	<script>
+		
+		var swiper = new Swiper(".mySwiper-1",{
+			slidesPerView:1,
+								spaceBetween: 30,
+								loop: true,
+								pagination:{
+								  el: ".swiper-pagination",
+								  clickable: true,
+								},
+								navigation:{
+								nextEl: ".swiper-button-next",
+								prevEl: ".swiper-button-prev",
+								}
+		} );
+		
+		var swiper = new Swiper(".mySwiper-2",{
+			slidesPerView:3,
+								spaceBetween: 30,
+								loop: true,
+								navigation:{
+								nextEl: ".swiper-button-next",
+								prevEl: ".swiper-button-prev",
+									
+								},
+			breakpoints:{
+				0:{
+					slidesPerView: 1
+				},
+				520:{
+					slidesPerView: 2
+				},
+				950:{
+					slidesPerView: 3
+				}
+			}
+		} );
+		
+		const carrito = document.getElementById('carrito');
+		const elementos1 = document.getElementById('lista-1')
+		const elementos2 = document.getElementById('lista-2')
+		const elementos3 = document.getElementById('lista-3')
+		const lista = document.querySelector('#lista-carrito tbody');
+	const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+		
+		function confirmarCompra() {
+    if (lista.children.length === 0) {
+      alert('No has seleccionado ningún producto.');
+    } else {
+      if (confirm('¿Estás seguro de realizar la compra?')) {
+        alert('¡Se ha registrado con éxito, Gracias por tu compra!');
+      } else {
+        alert('Lo siento, la compra ha sido cancelada.');
+      }
+    }
+  }
+	  
+	cargarEventListeners();
+	
+	  function cargarEventListeners(){
+		  elementos1.addEventListener('click',comprarElemento);
+		   elementos2.addEventListener('click',comprarElemento);
+		   elementos3.addEventListener('click',comprarElemento);
+		  carrito.addEventListener('click',eliminarElemento);
+		  vaciarCarritoBtn.addEventListener('click',vaciarCarrito);
+		  
+		  const btnComprar = document.getElementById('comprar');
+    btnComprar.addEventListener('click', confirmarCompra);
+	  }
+	  
+	  function comprarElemento(e){
+		  e.preventDefault();
+		  if(e.target.classList.contains('agregar-carrito')){
+			  const elemento = e.target.parentElement.parentElement;
+			  leerDatosElemento(elemento);
+		  }
+	  }
+	  
+	  function leerDatosElemento(elemento){
+		  const infoElemento ={
+			  imagen: elemento.querySelector('img').src,
+			  titulo: elemento.querySelector('h3').textContent,
+			  precio: elemento.querySelector('.precio').textContent,
+			  id: elemento.querySelector('a').getAttribute('data-id')
+		  }
+		  insertarCarrito(infoElemento);
+	  }
+	  function insertarCarrito(elemento){
+		  const row = document.createElement('tr');
+		  row.innerHTML =` 
+<td>
+    <img src="${elemento.imagen}" width=100>
+</td>
+
+<td>
+${elemento.titulo}
+</td>
+
+<td>
+${elemento.precio}
+</td>
+
+<td>
+<a herf="#" class="borrar data-id=${elemento.id}"> X </a>
+</td>
+`;
+		  lista.appendChild(row);
+	  }
+	  function eliminarElemento(e){
+		  e.preventDefault();
+		  let elemento,
+			  elementoId;
+		  if(e.target.classList.contains('borrar')){
+			  e.target.parentElement.parentElement.remove();
+			  elemento = e.target.parentElement.parentElement;
+			  elementoId =elemento.querySelector('a').getAttribute('data-id');
+		  }
+		  
+	  }
+	  function vaciarCarrito(){
+		  while(lista.firstChild){
+			  lista.removeChild(lista.firstElementChild);
+		  }
+		  return false;
+	  }
+	</script>
+	
+</body>
+</html>
